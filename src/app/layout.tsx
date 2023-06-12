@@ -15,7 +15,39 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className} flex min-h-screen flex-col`}>
+        <header className="flex-none">
+          <h1>Header</h1>
+        </header>
+        <nav className="flex-none">Navigation</nav>
+        <main className="flex-auto">{children}</main>
+        <footer className="flex-none py-4 text-sm">
+          <div className="flex-shrink-1">
+            {new Date().getFullYear()} &copy; Jason Yang
+          </div>
+          <ul className="grow">
+            <li>
+              <a
+                href="https://www.linkedin.com/in/jasonxwyang/"
+                target="_blank"
+              >
+                <img
+                  src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white"
+                  alt="LinkedIn"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/jason-yang" target="_blank">
+                <img
+                  src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white"
+                  alt="Github"
+                />
+              </a>
+            </li>
+          </ul>
+        </footer>
+      </body>
     </html>
   );
 }
