@@ -1,3 +1,4 @@
+import Image from "next/image";
 import "./globals.css";
 import { Inter } from "next/font/google";
 
@@ -31,17 +32,23 @@ export default function RootLayout({
                 href="https://www.linkedin.com/in/jasonxwyang/"
                 target="_blank"
               >
-                <img
+                <Image
                   src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white"
                   alt="LinkedIn"
+                  unoptimized={true}
+                  width={111}
+                  height={28}
                 />
               </a>
             </li>
             <li>
               <a href="https://github.com/jason-yang" target="_blank">
-                <img
+                <Image
                   src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white"
                   alt="Github"
+                  unoptimized={true}
+                  width={95.5}
+                  height={28}
                 />
               </a>
             </li>
