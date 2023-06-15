@@ -1,6 +1,8 @@
 import Image from "next/image";
 import "./globals.css";
 import { Inter } from "next/font/google";
+import Navigation from "@/components/navigation";
+import Heading from "@/components/heading";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,16 +19,27 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} flex min-h-screen flex-col`}>
-        <header className="flex-none">
-          <h1>Header</h1>
+        <header className="bg-gray-950 py-4 content-end">
+          <div className="container mx-auto flex items-center">
+            <Heading variant="h1" className="text-white" disableMargins>
+              Jason Yang
+            </Heading>
+            <Navigation
+              className="grow"
+              items={[
+                { href: "/", label: "Home" },
+                { href: "/blog", label: "Blog" },
+                { href: "/contact", label: "Contact" },
+              ]}
+            />
+          </div>
         </header>
-        <nav className="flex-none">Navigation</nav>
-        <main className="flex-auto">{children}</main>
-        <footer className="flex-none py-4 text-sm">
-          <div className="flex-shrink-1">
+        <main className="grow container mx-auto py-5">{children}</main>
+        <footer className="flex py-4 text-sm content-end container mx-auto">
+          <div className="shrink">
             {new Date().getFullYear()} &copy; Jason Yang
           </div>
-          <ul className="grow">
+          <ul className="flex grow place-content-end gap-1">
             <li>
               <a
                 href="https://www.linkedin.com/in/jasonxwyang/"
