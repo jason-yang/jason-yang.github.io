@@ -1,6 +1,12 @@
 import Container from "@/components/container";
 import Header from "@/components/header";
+import { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Jason Yang - Contact",
+  description: "Contact Jason Yang",
+};
 
 export default function ContactPage() {
   return (
