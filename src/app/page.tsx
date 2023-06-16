@@ -1,4 +1,6 @@
-import Heading from "@/components/heading";
+import Container from "@/components/container";
+import Header from "@/components/header";
+import Link from "@/components/link";
 import { Metadata } from "next";
 
 const title = "Jason Yang - Home";
@@ -16,8 +18,7 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <>
-      <Heading>Introduction</Heading>
+    <Container header={<Header>Introduction</Header>}>
       <p>
         Jason Yang is a Software Engineer with 18 years of Full Stack experience
         specializing in Frontend Engineering focused on giving end users the
@@ -32,6 +33,13 @@ export default function HomePage() {
         spend time with his family of four, online gaming sessions with his
         friends, and keeping himself up to date with relevant new technology.
       </p>
-    </>
+      <p>
+        For more details please check out my{" "}
+        <Link href="https://www.linkedin.com/in/jasonxwyang/">
+          LinkedIn profile
+        </Link>
+        .
+      </p>
+    </Container>
   );
 }

@@ -1,10 +1,10 @@
-import Heading from "@/components/heading";
+import Container from "@/components/container";
+import Header from "@/components/header";
 import Image from "next/image";
 
 export default function ContactPage() {
   return (
-    <>
-      <Heading>Contact details</Heading>
+    <Container header={<Header>Contact details</Header>}>
       <p>
         You can contact me via LinkedIn:{" "}
         <a href="https://www.linkedin.com/in/jasonxwyang/" target="_blank">
@@ -18,6 +18,6 @@ export default function ContactPage() {
           />
         </a>
       </p>
-    </>
+    </Container>
   );
 }

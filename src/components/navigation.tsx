@@ -3,7 +3,7 @@
 import clsx from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { HTMLAttributes, PropsWithChildren } from "react";
+import { HTMLAttributes } from "react";
 
 export interface NavItem {
   href: string;
@@ -29,9 +29,9 @@ export default function Navigation({
           return (
             <li
               key={key}
-              className={clsx("border-red-300 px-1 hover:border-b", {
-                "hover:text-red-300": !active,
-                "border-b border-red-500 text-red-500": active,
+              className={clsx("px-2", {
+                "hover:text-red-400 hover:border-b-2 border-red-400": !active,
+                "border-b-2 border-red-500 text-red-500": active,
               })}
             >
               <Link href={href}>{label}</Link>
