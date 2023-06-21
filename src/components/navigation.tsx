@@ -8,7 +8,6 @@ import { HTMLAttributes } from "react";
 export interface NavItem {
   href: string;
   label: React.ReactNode;
-  active?: boolean;
 }
 
 export interface NavigationProps {
