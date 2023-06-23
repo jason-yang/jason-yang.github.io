@@ -42,7 +42,10 @@ export default function RootLayout({
         <footer className="bg-white border-t border-gray-200">
           <div className="flex py-4 text-sm content-end container mx-auto items-center">
             <div className="shrink">
-              {new Date().getFullYear()} &copy; Jason Yang
+              <div>{new Date().getFullYear()} &copy; Jason Yang</div>
+              <div className="text-gray-400 text-xs">
+                Last updated: {new Date().toUTCString()}
+              </div>
             </div>
             <ul className="flex grow place-content-end gap-1">
               <li>
