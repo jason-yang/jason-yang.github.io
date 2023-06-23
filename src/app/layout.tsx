@@ -40,7 +40,7 @@ export default function RootLayout({
         </header>
         <main className="grow container mx-auto py-8">{children}</main>
         <footer className="bg-white border-t border-gray-200">
-          <div className="flex py-4 text-sm content-end container mx-auto items-end">
+          <div className="flex py-4 text-sm content-end container mx-auto items-center">
             <div className="shrink">
               {new Date().getFullYear()} &copy; Jason Yang
             </div>
