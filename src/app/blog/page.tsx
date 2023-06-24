@@ -3,7 +3,10 @@ import Header from "@/components/header";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Jason Yang - Blog",
+  title: {
+    template: "%s | Blog",
+    default: "Blog",
+  },
 };
 
 export default function BlogPage() {

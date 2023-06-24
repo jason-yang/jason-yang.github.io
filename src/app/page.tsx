@@ -3,16 +3,11 @@ import Header from "@/components/header";
 import Link from "@/components/link";
 import { Metadata } from "next";
 
-const title = "Jason Yang - Home";
-const description = "Personal page for Jason Yang";
-
 export const metadata: Metadata = {
-  title,
-  description,
+  title: "Home",
+  description: "Personal page for Jason Yang",
   openGraph: {
     type: "website",
-    title,
-    description,
   },
 };
 
