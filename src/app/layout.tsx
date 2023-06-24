@@ -38,9 +38,9 @@ export default function RootLayout({
             <Navigation
               className="grow"
               items={[
-                { href: "/", label: "Home" },
-                { href: "/blog", label: "Blog" },
-                { href: "/contact", label: "Contact" },
+                { href: "/", label: "Home", segment: null },
+                { href: "/blog", label: "Blog", segment: "blog" },
+                { href: "/contact", label: "Contact", segment: "contact" },
               ]}
             />
           </div>
