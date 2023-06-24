@@ -1,15 +1,6 @@
 import Container from "@/components/container";
 import Header from "@/components/header";
 import Link from "@/components/link";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Home",
-  description: "Personal page for Jason Yang",
-  openGraph: {
-    type: "website",
-  },
-};
 
 export default function HomePage() {
   return (
