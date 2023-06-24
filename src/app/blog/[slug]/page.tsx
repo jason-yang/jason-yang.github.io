@@ -55,6 +55,7 @@ export async function generateMetadata(props: {
     title: `${title} | Blog`,
     openGraph: {
       type: "article",
+      authors: "Jason Yang",
     },
   };
 }
