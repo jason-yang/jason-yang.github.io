@@ -1,3 +1,4 @@
+import Breadcrumb from "@/components/breadcrumbs/breadcrumb";
 import Container from "@/components/container";
 import Header from "@/components/header";
 import { getPost, postFilePaths } from "@/utils/blog";
@@ -10,16 +11,21 @@ interface BlogEntryParams {
   slug: string;
 }
 
-export default async function BlogEntryPage(props: {
+interface BlogEntryPageProps {
   params: BlogEntryParams;
-}) {
+}
+
+export default async function BlogEntryPage({
+  params: { slug },
+}: BlogEntryPageProps) {
   const {
     content,
-    meta: { title, description, publish_date },
-  } = await getPost(`${props.params.slug}.mdx`);
+    meta: { title, publish_date },
+  } = await getPost(`${slug}.mdx`);
 
   return (
     <article>
+      <Breadcrumb label={title} href={`/blog/${slug}`} />
       <Container
         header={
           <Header
