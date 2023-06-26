@@ -48,7 +48,9 @@ export default function RootLayout({
               />
             </div>
           </header>
-          <BreadcrumbsOutput />
+          <div className="backdrop-blur-sm py-2">
+            <BreadcrumbsOutput className="container mx-auto" />
+          </div>
           <main className="grow container mx-auto py-8">{children}</main>
           <footer className="bg-white border-t border-gray-200">
             <div className="flex py-4 text-sm content-end container mx-auto items-center">

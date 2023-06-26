@@ -1,16 +1,18 @@
 "use client";
 
-import { useContext } from "react";
+import { HTMLAttributes, useContext } from "react";
 import { BreadcrumbsContext } from "./provider";
 import Link from "../link";
 import clsx from "clsx";
 
-export default function BreadcrumbsOutput() {
+export default function BreadcrumbsOutput(
+  props: HTMLAttributes<HTMLDivElement>
+) {
   const { items } = useContext(BreadcrumbsContext);
 
   return (
-    <nav className="backdrop-blur-sm py-2">
-      <ol className="container mx-auto flex flex-row gap-2">
+    <nav {...props}>
+      <ol className="flex flex-row gap-2">
         {items.map(({ label, href }, key) => {
           const isLast = key === items.length - 1;
 
