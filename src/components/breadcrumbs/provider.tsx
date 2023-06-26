@@ -7,6 +7,7 @@ import {
   createContext,
   useState,
 } from "react";
+import HomeIcon from "@heroicons/react/20/solid/HomeIcon";
 import { CrumbItem } from "./types";
 
 interface Context {
@@ -21,7 +22,15 @@ export const BreadcrumbsContext = createContext<Context>({
 
 export default function BreadcrumbsProvider({ children }: PropsWithChildren) {
   const [items, setItems] = useState<CrumbItem[]>([
-    { label: "Home", href: "/" },
+    {
+      label: (
+        <div className="flex flex-row items-center gap-1">
+          <HomeIcon className="h-4 w-4" />
+          Home
+        </div>
+      ),
+      href: "/",
+    },
   ]);
 
   return (
