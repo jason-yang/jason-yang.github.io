@@ -4,6 +4,7 @@ import clsx from "clsx";
 import Link from "next/link";
 import { usePathname, useSelectedLayoutSegment } from "next/navigation";
 import { HTMLAttributes } from "react";
+import SpaceBetween from "./space-between";
 
 export interface NavItem {
   href: string;
@@ -23,22 +24,28 @@ export default function Navigation({
 
   return (
     <nav {...props}>
-      <ol className="container mx-auto flex place-content-end gap-3 text-gray-300">
+      <SpaceBetween
+        variant="buttons"
+        spacing="m"
+        className="place-content-end text-gray-300"
+      >
         {items.map(({ href, label, segment }, key) => {
           const active = segment === currentSegment;
           return (
-            <li
+            <Link
               key={key}
-              className={clsx("px-2", {
-                "hover:text-red-400 hover:border-b-2 border-red-400": !active,
-                "border-b-2 border-red-500 text-red-500": active,
+              href={href}
+              className={clsx("px-2 border-b-2 ", {
+                "hover:text-red-400 hover:border-red-400 border-transparent":
+                  !active,
+                "border-red-500 text-red-500": active,
               })}
             >
-              <Link href={href}>{label}</Link>
-            </li>
+              {label}
+            </Link>
           );
         })}
-      </ol>
+      </SpaceBetween>
     </nav>
   );
 }

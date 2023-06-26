@@ -6,6 +6,8 @@ import Header from "@/components/header";
 import { Metadata } from "next";
 import BreadcrumbsProvider from "@/components/breadcrumbs/provider";
 import BreadcrumbsOutput from "@/components/breadcrumbs/output";
+import Container from "@/components/container";
+import SpaceBetween from "@/components/space-between";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,7 +31,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} flex min-h-screen flex-col`}>
         <BreadcrumbsProvider>
-          <header className="bg-gray-950 py-4 content-end">
+          <header className="bg-gray-950 py-4 content-end mb-4">
             <div className="container mx-auto flex items-end">
               <Header
                 variant="h1"
@@ -48,9 +50,9 @@ export default function RootLayout({
               />
             </div>
           </header>
-          <div className="backdrop-blur-sm py-2">
-            <BreadcrumbsOutput className="container mx-auto" />
-          </div>
+          <Container className="container mx-auto">
+            <BreadcrumbsOutput />
+          </Container>
           <main className="grow container mx-auto py-8">{children}</main>
           <footer className="bg-white border-t border-gray-200">
             <div className="flex py-4 text-sm content-end container mx-auto items-center">
@@ -60,33 +62,32 @@ export default function RootLayout({
                   Last updated: {new Date().toUTCString()}
                 </div>
               </div>
-              <ul className="flex grow place-content-end gap-1">
-                <li>
-                  <a
-                    href="https://www.linkedin.com/in/jasonxwyang/"
-                    target="_blank"
-                  >
-                    <Image
-                      src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white"
-                      alt="LinkedIn"
-                      unoptimized={true}
-                      width={111}
-                      height={28}
-                    />
-                  </a>
-                </li>
-                <li>
-                  <a href="https://github.com/jason-yang" target="_blank">
-                    <Image
-                      src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white"
-                      alt="Github"
-                      unoptimized={true}
-                      width={95.5}
-                      height={28}
-                    />
-                  </a>
-                </li>
-              </ul>
+              <SpaceBetween
+                variant="buttons"
+                className="grow place-content-end"
+              >
+                <a
+                  href="https://www.linkedin.com/in/jasonxwyang/"
+                  target="_blank"
+                >
+                  <Image
+                    src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white"
+                    alt="LinkedIn"
+                    unoptimized={true}
+                    width={111}
+                    height={28}
+                  />
+                </a>
+                <a href="https://github.com/jason-yang" target="_blank">
+                  <Image
+                    src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white"
+                    alt="Github"
+                    unoptimized={true}
+                    width={95.5}
+                    height={28}
+                  />
+                </a>
+              </SpaceBetween>
             </div>
           </footer>
         </BreadcrumbsProvider>

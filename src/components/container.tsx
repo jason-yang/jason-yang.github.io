@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import React from "react";
+import React, { HTMLAttributes } from "react";
 
 interface ContainerOptions {
   footer?: ContainerFooterProps;
@@ -31,9 +31,17 @@ export default function Container({
   header,
   footer,
   options,
-}: React.PropsWithChildren<ContainerProps>) {
+  className,
+  ...props
+}: React.PropsWithChildren<ContainerProps> & HTMLAttributes<HTMLDivElement>) {
   return (
-    <div className="bg-white rounded-md border border-gray-300 overflow-hidden shadow-md">
+    <div
+      className={clsx(
+        "bg-white rounded-md border border-gray-300 overflow-hidden shadow-md",
+        className
+      )}
+      {...props}
+    >
       {header && <div className="p-5 border-b">{header}</div>}
       <div className="p-5">{children}</div>
       {footer && (
