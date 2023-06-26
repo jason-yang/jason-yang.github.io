@@ -10,6 +10,7 @@ export const postFilePaths = fs
 
 interface Frontmatter {
   title: string;
+  author: string;
   description: string;
   publish_date: string;
   published?: boolean;
@@ -33,6 +34,7 @@ export async function getPost(filePath: string) {
       title,
       description,
       publish_date: new Date(publish_date),
+      author: "Jason Yang", // TODO: hard coded for now
     },
     slug: filePath.replace(/\.mdx?$/, ""),
   };
