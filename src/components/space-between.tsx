@@ -3,7 +3,7 @@ import { HTMLAttributes, PropsWithChildren } from "react";
 
 type Variant = "container" | "buttons";
 type Direction = "horizontal" | "vertical";
-type Spacing = "xxxs" | "xxs" | "xs" | "s" | "m" | "l" | "xl" | "xxl";
+type Spacing = "none" | "xxxs" | "xxs" | "xs" | "s" | "m" | "l" | "xl" | "xxl";
 type AlignItems = "start" | "center" | "end" | "baseline" | "stretch";
 
 interface VariantDefaults {
@@ -23,6 +23,7 @@ const VARIANT_DEFAULTS: { [key in Variant]: VariantDefaults } = {
 };
 
 const spacingMap: { [key in Spacing]: string } = {
+  none: "gap-0",
   xxxs: "gap-0.5",
   xxs: "gap-1",
   xs: "gap-2",
