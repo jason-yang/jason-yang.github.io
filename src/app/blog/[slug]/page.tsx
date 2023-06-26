@@ -54,14 +54,17 @@ export async function generateMetadata(props: {
   params: BlogEntryParams;
 }): Promise<Metadata> {
   const {
-    meta: { title },
+    meta: { title, description, author },
   } = await getPost(`${props.params.slug}.mdx`);
 
   return {
     title: `${title} | Blog`,
+    description,
+    authors: {
+      name: author,
+    },
     openGraph: {
       type: "article",
-      authors: "Jason Yang",
     },
   };
 }
