@@ -31,7 +31,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} flex min-h-screen flex-col`}>
         <BreadcrumbsProvider>
-          <header className="bg-gray-950 py-4 content-end mb-4">
+          <header className="bg-gray-950 py-4 content-end">
             <div className="container mx-auto flex items-end">
               <Header
                 variant="h1"
@@ -50,10 +50,12 @@ export default function RootLayout({
               />
             </div>
           </header>
-          <Container className="container mx-auto">
-            <BreadcrumbsOutput />
-          </Container>
-          <main className="grow container mx-auto py-8">{children}</main>
+          <SpaceBetween variant="container" className="grow py-4">
+            <Container className="container mx-auto">
+              <BreadcrumbsOutput />
+            </Container>
+            <main className="container mx-auto">{children}</main>
+          </SpaceBetween>
           <footer className="bg-white border-t border-gray-200">
             <div className="flex py-4 text-sm content-end container mx-auto items-center">
               <div className="shrink">
