@@ -17,7 +17,7 @@ interface HeaderProps {
   description?: React.ReactNode;
   color?: string;
   descriptionColor?: string;
-  action?: React.ReactNode;
+  actions?: React.ReactNode;
 }
 
 export default function Header({
@@ -25,7 +25,7 @@ export default function Header({
   description,
   variant = "h2",
   className,
-  action,
+  actions,
   ...props
 }: React.PropsWithChildren<HeaderProps> &
   React.HTMLAttributes<HTMLHeadingElement>) {
@@ -39,7 +39,7 @@ export default function Header({
         </Element>
         {description && <div className="text-sm">{description}</div>}
       </div>
-      {action && <div className="shrink">{action}</div>}
+      {actions && <div className="shrink">{actions}</div>}
     </div>
   );
 }
