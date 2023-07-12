@@ -1,6 +1,7 @@
-import fs, { readFileSync, statSync } from "fs";
+import fs, { readFileSync } from "fs";
 import path from "path";
 import { compileMDX } from "next-mdx-remote/rsc";
+import Link from "@/components/link";
 
 export const POST_DIR = path.resolve(process.cwd(), "src", "content", "blog");
 
@@ -22,10 +23,22 @@ export async function getPost(filePath: string) {
 
   const {
     content,
-    frontmatter: { description, publish_date, title },
+    frontmatter: { description, publish_date, title, published },
   } = await compileMDX<Frontmatter>({
     source,
     options: { parseFrontmatter: true },
+    components: {
+      a: ({ children, href = "", ...props }) => (
+        <Link href={href} {...props}>
+          {children}
+        </Link>
+      ),
+      ol: ({ children, ...props }) => (
+        <ol {...props} className="ml-2 list-decimal list-inside">
+          {children}
+        </ol>
+      ),
+    },
   });
 
   return {
@@ -35,11 +48,18 @@ export async function getPost(filePath: string) {
       description,
       publish_date: new Date(publish_date),
       author: "Jason Yang", // TODO: hard coded for now
+      published,
     },
     slug: filePath.replace(/\.mdx?$/, ""),
   };
 }
 
-export async function getAllPosts() {
-  return Promise.all(postFilePaths.map(getPost));
+interface GetAllPostsOptions {
+  showHidden?: boolean;
+}
+
+export async function getAllPosts({ showHidden }: GetAllPostsOptions = {}) {
+  return (await Promise.all(postFilePaths.map(getPost))).filter(
+    (post) => showHidden || post.meta.published
+  );
 }
