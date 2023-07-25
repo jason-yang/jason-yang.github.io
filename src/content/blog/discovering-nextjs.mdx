@@ -1,0 +1,38 @@
+---
+title: Discovering NextJS
+description: My first foray into NextJS
+publish_date: 2023-06-23
+published: true
+---
+
+When I first heard of NextJS, I thought it was too good to be true; A single React-based framework that handled both front and back end coding, including server-side rendering.
+I have always treated web UX as a client-side solution, and while the idea of server-side rendering (SSR) sounds great, the implementation still ends up having to disconnect client-side specific logic from the "main" app,
+which increases the complexity of the application for two main purposes:
+
+1. Search Engine Optimization (SEO)
+2. Initial page load times
+
+SEO improvements sounds great, but in practice isn't too big a deal as Google already scrapes Single Page Application (SPA) pages with it's own URL by loading it in headless Chrome.
+It may not be perfect, but in the world of SEO where criteria for ranking is unknown and ever changing, minor differences in how Google views a page isn't going to make or break it's SEO ranking.
+
+Page load times also sounds great, if you were loading a single large application logic payload that caused a long initial page load if the browser did not have the JavaScript (js) file already cached.
+This can be mitigated with code splitting and using dynamic imports for page components, which I won't get into here, but suffice to say there are solutions for the initial page load problem without resorting to server-side rendering.
+
+So when I decided to take a look at the latest iteration of NextJS, version 13, I saw that the framework decided to take a leap and depart from it's own SSR solution and adopt
+[React Server Components](https://react.dev/blog/2023/03/22/react-labs-what-we-have-been-working-on-march-2023#react-server-components), which is currently still in beta; this gave me an opportunity
+to explore new technology, so I took the plunge and studied the documentation and initialized a starter project, this website.
+
+Here is what I did to start off my project:
+
+~~~js
+npx create-next-app@latest
+~~~
+
+This installed the starter project with a basic single view page.  My initial impressions were great, it was basically a 1-command installation and gave be the most basic starting point
+for any project type. There was not any bloat that I could see or feel, and the page loaded up flawlessly. I explored how routes worked, how layouts and pages worked, the
+[built-in components](https://nextjs.org/docs/app/api-reference/components)...etc., and in the process of that encountered my first problem: the majority of articles and Q&A posts about NextJS were
+for &lt;13, and I was using NextJS 13, which changed it's folder structure and core principles to align with React's own Server Components. Although much of my researching efforts applied to
+NextJS 13, sometimes it wasn't clear if it would work with the newst version and resulted in me putting code to the test and finding out it doesn't work and then spending more time diving deeper to
+find the correct solution.
+
+To be continued...

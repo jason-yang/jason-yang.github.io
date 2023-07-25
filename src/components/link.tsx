@@ -2,6 +2,8 @@ import clsx from "clsx";
 import LinkBase from "next/link";
 import React from "react";
 
+interface LinkProps {}
+
 export default function Link({
   children,
   className,

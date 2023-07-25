@@ -4,6 +4,7 @@ import Header from "@/components/header";
 import { getPost, postFilePaths } from "@/utils/blog";
 import { formatRelative } from "date-fns";
 import { Metadata } from "next";
+import "@/styles/highlight-js/github-dark.css";
 
 export const dynamicParams = false;
 
