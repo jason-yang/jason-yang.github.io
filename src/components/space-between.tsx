@@ -51,6 +51,9 @@ interface SpaceBetweenProps {
    * Align items (flex)
    */
   alignItems?: AlignItems;
+  wrapper?: React.Component<
+    React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>
+  >;
 }
 
 export default function SpaceBetween({
