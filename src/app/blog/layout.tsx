@@ -1,5 +1,6 @@
-import Breadcrumb from "@/components/breadcrumbs/breadcrumb";
 import { PropsWithChildren } from "react";
+
+import Breadcrumb from "@/components/breadcrumbs/breadcrumb";
 
 export default function BlogLayout({ children }: PropsWithChildren) {
   return (

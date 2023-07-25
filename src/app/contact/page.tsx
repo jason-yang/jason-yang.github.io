@@ -1,8 +1,9 @@
+import { Metadata } from "next";
+import Image from "next/image";
+
 import Breadcrumb from "@/components/breadcrumbs/breadcrumb";
 import Container from "@/components/container";
 import Header from "@/components/header";
-import { Metadata } from "next";
-import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Contact",

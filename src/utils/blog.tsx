@@ -1,11 +1,12 @@
-import fs, { readFileSync } from "fs";
-import path from "path";
-import { compileMDX } from "next-mdx-remote/rsc";
-import Link from "@/components/link";
 import { MDXProvider } from "@mdx-js/react";
-import OrderedList from "@/components/ordered-list";
-import rehypeHighlight from "rehype-highlight";
 import clsx from "clsx";
+import fs, { readFileSync } from "fs";
+import { compileMDX } from "next-mdx-remote/rsc";
+import path from "path";
+import rehypeHighlight from "rehype-highlight";
+
+import Link from "@/components/link";
+import OrderedList from "@/components/ordered-list";
 import Pre from "@/components/pre";
 
 export const POST_DIR = path.resolve(process.cwd(), "src", "content", "blog");

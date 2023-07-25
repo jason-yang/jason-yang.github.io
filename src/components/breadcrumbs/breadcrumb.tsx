@@ -1,8 +1,9 @@
 "use client";
 
 import { useContext, useLayoutEffect } from "react";
-import { CrumbItem } from "./types";
+
 import { BreadcrumbsContext } from "./provider";
+import { CrumbItem } from "./types";
 
 export default function Breadcrumb(crumbItem: CrumbItem) {
   const { setItems } = useContext(BreadcrumbsContext);

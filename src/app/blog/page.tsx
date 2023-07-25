@@ -1,3 +1,5 @@
+import { Metadata } from "next";
+
 import Container from "@/components/container";
 import DateDisplay from "@/components/date";
 import Header from "@/components/header";
@@ -5,7 +7,6 @@ import Link from "@/components/link";
 import SegmentedControl from "@/components/segmented-control";
 import SpaceBetween from "@/components/space-between";
 import { getAllPosts } from "@/utils/blog";
-import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: {

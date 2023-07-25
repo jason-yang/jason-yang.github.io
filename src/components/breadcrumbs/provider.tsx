@@ -1,13 +1,14 @@
 "use client";
 
+import HomeIcon from "@heroicons/react/20/solid/HomeIcon";
 import {
+  createContext,
   Dispatch,
   PropsWithChildren,
   SetStateAction,
-  createContext,
   useState,
 } from "react";
-import HomeIcon from "@heroicons/react/20/solid/HomeIcon";
+
 import { CrumbItem } from "./types";
 
 interface Context {

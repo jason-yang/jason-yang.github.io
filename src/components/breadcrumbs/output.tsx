@@ -1,10 +1,11 @@
 "use client";
 
-import { HTMLAttributes, useContext } from "react";
-import { BreadcrumbsContext } from "./provider";
-import Link from "../link";
 import clsx from "clsx";
+import { HTMLAttributes, useContext } from "react";
+
+import Link from "../link";
 import SpaceBetween from "../space-between";
+import { BreadcrumbsContext } from "./provider";
 
 export default function BreadcrumbsOutput(
   props: HTMLAttributes<HTMLDivElement>

@@ -1,12 +1,14 @@
-import Breadcrumb from "@/components/breadcrumbs/breadcrumb";
-import Container from "@/components/container";
-import Header from "@/components/header";
-import { getPost, postFilePaths } from "@/utils/blog";
+import "@/styles/highlight-js/github-dark.css";
+
 import { formatRelative } from "date-fns";
 import { Metadata } from "next";
-import "@/styles/highlight-js/github-dark.css";
-import SpaceBetween from "@/components/space-between";
+
+import Breadcrumb from "@/components/breadcrumbs/breadcrumb";
+import Container from "@/components/container";
 import Disqus from "@/components/disqus";
+import Header from "@/components/header";
+import SpaceBetween from "@/components/space-between";
+import { getPost, postFilePaths } from "@/utils/blog";
 
 export const dynamicParams = false;
 

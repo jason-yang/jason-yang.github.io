@@ -1,12 +1,14 @@
-import Image from "next/image";
 import "./globals.css";
-import { Inter } from "next/font/google";
-import Navigation from "@/components/navigation";
-import Header from "@/components/header";
+
 import { Metadata } from "next";
-import BreadcrumbsProvider from "@/components/breadcrumbs/provider";
+import { Inter } from "next/font/google";
+import Image from "next/image";
+
 import BreadcrumbsOutput from "@/components/breadcrumbs/output";
+import BreadcrumbsProvider from "@/components/breadcrumbs/provider";
 import Container from "@/components/container";
+import Header from "@/components/header";
+import Navigation from "@/components/navigation";
 import SpaceBetween from "@/components/space-between";
 
 const inter = Inter({ subsets: ["latin"] });

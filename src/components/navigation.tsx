@@ -4,6 +4,7 @@ import clsx from "clsx";
 import Link from "next/link";
 import { usePathname, useSelectedLayoutSegment } from "next/navigation";
 import { HTMLAttributes } from "react";
+
 import SpaceBetween from "./space-between";
 
 export interface NavItem {
