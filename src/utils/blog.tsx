@@ -1,5 +1,4 @@
 import { MDXProvider } from "@mdx-js/react";
-import clsx from "clsx";
 import fs, { readFileSync } from "fs";
 import { compileMDX } from "next-mdx-remote/rsc";
 import path from "path";
