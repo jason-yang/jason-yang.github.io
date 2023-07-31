@@ -47,6 +47,11 @@ export default function RootLayout({
                 items={[
                   { href: "/", label: "Home", segment: null },
                   { href: "/blog", label: "Blog", segment: "blog" },
+                  {
+                    href: "/experiments",
+                    label: "Experiments",
+                    segment: "experiments",
+                  },
                   { href: "/contact", label: "Contact", segment: "contact" },
                 ]}
               />

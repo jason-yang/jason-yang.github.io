@@ -1,5 +1,5 @@
 import { MDXProvider } from "@mdx-js/react";
-import fs, { readFileSync } from "fs";
+import fs from "fs";
 import { compileMDX } from "next-mdx-remote/rsc";
 import path from "path";
 import rehypeHighlight from "rehype-highlight";
@@ -8,7 +8,7 @@ import Link from "@/components/link";
 import OrderedList from "@/components/ordered-list";
 import Pre from "@/components/pre";
 
-export const POST_DIR = path.resolve(process.cwd(), "src", "content", "blog");
+const POST_DIR = path.resolve(process.cwd(), "src", "content", "blog");
 
 export const postFilePaths = fs
   .readdirSync(POST_DIR)
@@ -34,7 +34,7 @@ interface Frontmatter {
 
 export async function getPost(filePath: string) {
   const fullFilePath = path.join(POST_DIR, filePath);
-  const source = readFileSync(fullFilePath);
+  const source = fs.readFileSync(fullFilePath);
 
   const {
     content,
