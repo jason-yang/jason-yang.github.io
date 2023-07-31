@@ -75,7 +75,7 @@ export async function generateMetadata(props: {
   } = await getPost(`${props.params.slug}.mdx`);
 
   return {
-    title: `${title} | Blog`,
+    title,
     description,
     authors: {
       name: author,

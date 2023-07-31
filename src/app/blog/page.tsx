@@ -1,18 +1,9 @@
-import { Metadata } from "next";
-
 import Container from "@/components/container";
 import DateDisplay from "@/components/date";
 import Header from "@/components/header";
 import Link from "@/components/link";
 import SpaceBetween from "@/components/space-between";
 import { getAllPosts } from "@/utils/blog";
-
-export const metadata: Metadata = {
-  title: {
-    template: "%s | Blog",
-    default: "Blog",
-  },
-};
 
 export default async function BlogPage() {
   const posts = await getAllPosts();
