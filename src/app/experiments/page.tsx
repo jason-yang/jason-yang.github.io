@@ -5,6 +5,7 @@ import Header from "@/components/header";
 import Link from "@/components/link";
 import SpaceBetween from "@/components/space-between";
 
+import CounterPage, { metadata as CounterMetadata } from "./counter/page";
 import Todo, { metadata as TodoMetadata } from "./todo/page";
 
 interface Experiment {
@@ -14,6 +15,7 @@ interface Experiment {
 
 const EXPERIMENTS: { [slug: string]: Experiment } = {
   todo: { Component: Todo, metadata: TodoMetadata },
+  counter: { Component: CounterPage, metadata: CounterMetadata },
 };
 
 export default async function ExperimentsPage() {
