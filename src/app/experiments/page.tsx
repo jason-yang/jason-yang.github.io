@@ -12,7 +12,7 @@ interface Experiment {
   Component: React.ComponentType;
 }
 
-export const experiments: { [slug: string]: Experiment } = {
+const EXPERIMENTS: { [slug: string]: Experiment } = {
   todo: { Component: Todo, metadata: TodoMetadata },
 };
 
@@ -20,7 +20,7 @@ export default async function ExperimentsPage() {
   return (
     <Container header={<Header>Experiments</Header>}>
       <SpaceBetween variant="container">
-        {Object.entries(experiments).map(
+        {Object.entries(EXPERIMENTS).map(
           (
             [
               slug,
