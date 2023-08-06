@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 
+import Breadcrumb from "@/components/breadcrumbs/breadcrumb";
 import Container from "@/components/container";
 import Header from "@/components/header";
 import SpaceBetween from "@/components/space-between";
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
 export default function CounterPage() {
   return (
     <Container header={<Header>Counter</Header>}>
+      <Breadcrumb href="/experiments/counter" label="Counter" />
       <SpaceBetween variant="container">
         <div>
           <p>With reducer:</p>
